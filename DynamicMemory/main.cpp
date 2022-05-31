@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 void FillRand(int arr[], const int n);
@@ -15,7 +15,7 @@ void main()
 	setlocale(LC_ALL, "");
 
 	int n;
-	cout << "Ââåäèòå ðàçìåð ìàññèâà: "; cin >> n;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°: "; cin >> n;
 
 	int* arr = new int[n];
 
@@ -23,16 +23,16 @@ void main()
 	Print(arr, n);
 
 	int add;
-	cout << "Ââåäèòå çíà÷åíèå ïîñëåäíåãî ýëåìåíòà: "; cin >> add;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÐµÐ³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°: "; cin >> add;
 	Push_Back(arr, n, add);
 	Print(arr, n);
 
-	cout << "Ââåäèòå çíà÷åíèå ïåðâîãî ýëåìåíòà: "; cin >> add;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°: "; cin >> add;
 	Push_Front(arr, n, add);
 	Print(arr, n);
 
 	int index;
-	cout << "Ââåäèòå èíäåêñ è çíà÷åíèå åãî ïåðåìåííîé: "; cin >> index >> add;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ Ð¸ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÐµÐ³Ð¾ Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ð¾Ð¹: "; cin >> index >> add;
 	Insert(arr, n, add, index);
 	Print(arr, n);
 
@@ -46,7 +46,7 @@ void main()
 	Pop_Front(arr, n);
 	Print(arr, n);
 
-	cout << "Ââåäèòå èíäåêñ ýëåìåíòà äëÿ óäàëåíèÿ: "; cin >> index;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð´Ð»Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ: "; cin >> index;
 	Erase(arr, n, index);
 	Print(arr, n);
 
@@ -57,7 +57,7 @@ void FillRand(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		//×åðåç àðèôìåòèêó óêàçàòåëåé è îïåðàòîð ðàçûìåíîâàíèÿ
+		//Ð§ÐµÑ€ÐµÐ· Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸ÐºÑƒ ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÐµÐ¹ Ð¸ Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ñ€Ð°Ð·Ñ‹Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ñ
 		*(arr + i) = rand() % 100;
 	}
 }
@@ -66,7 +66,7 @@ void Print(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		//[] - îïåðàòîð èíäåêñèðîâàíèÿ (subnscript operator)
+		//[] - Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð¸Ð½Ð´ÐµÐºÑÐ¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ (subnscript operator)
 		cout << arr[i] << "\t";
 	}
 
