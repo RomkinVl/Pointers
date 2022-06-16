@@ -1,14 +1,14 @@
 ﻿#include <iostream>
 using namespace std;
 
-void FillRand(int arr[], const int n);
-void Print(int arr[], const int n);
-void Push_Back(int arr[], const int n, int add);
-void Push_Front(int arr[], const int n, int add);
-void Insert(int arr[], const int n, int add, int index);
-void Pop_Back(int arr[], const int n);
-void Pop_Front(int arr[], const int n);
-void Erase(int arr[], const int n, int index);
+template <typename T> void FillRand(T arr[], const int n);
+template <typename T> void Print(T arr[], const int n);
+template <typename T> void Push_Back(T arr[], const int n, T add);
+template <typename T> void Push_Front(T arr[], const int n, T add);
+template <typename T> void Insert(T arr[], const int n, T add, int index);
+template <typename T> void Pop_Back(T arr[], const int n);
+template <typename T> void Pop_Front(T arr[], const int n);
+template <typename T> void Erase(T arr[], const int n, int index);
 
 void main()
 {
@@ -53,7 +53,7 @@ void main()
 	delete[] arr;
 }
 
-void FillRand(int arr[], const int n)
+template <typename T> void FillRand(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -62,7 +62,7 @@ void FillRand(int arr[], const int n)
 	}
 }
 
-void Print(int arr[], const int n)
+template <typename T> void Print(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -73,32 +73,32 @@ void Print(int arr[], const int n)
 	cout << endl;
 }
 
-void Push_Back(int arr[], const int n, int add)
+template <typename T> void Push_Back(T arr[], const int n, T add)
 {
 	*(arr + (n - 1)) = add;
 }
 
-void Push_Front(int arr[], const int n, int add)
+template <typename T> void Push_Front(T arr[], const int n, T add)
 {
 	*arr = add;
 }
 
-void Insert(int arr[], const int n, int add, int index)
+template <typename T> void Insert(T arr[], const int n, T add, int index)
 {
 	*(arr + index) = add;
 }
 
-void Pop_Back(int arr[], const int n)
+template <typename T> void Pop_Back(T arr[], const int n)
 {
 	*(arr + (n - 1)) = 0;
 }
 
-void Pop_Front(int arr[], const int n)
+template <typename T> void Pop_Front(T arr[], const int n)
 {
 	*arr = 0;
 }
 
-void Erase(int arr[], const int n, int index)
+template <typename T> void Erase(T arr[], const int n, int index)
 {
 
 	*(arr + index) = 0;
