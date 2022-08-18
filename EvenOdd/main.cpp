@@ -6,8 +6,7 @@ using std::cout;
 void FillRand(int arr[], const int n);
 void Print(int arr[], const int n);
 
-int* push_back(int arr[], int& n, int value);
-int* push_front(int arr[], int& n, int value);
+
 
 void main()
 {
@@ -27,19 +26,58 @@ void main()
 	Обращаться к элементам динам. массива можно точно точно также как и к элементам
 	стат.массива: через арифметику указателей и оператор разымен., либо ч/з оператор
 	индексирования
-	*/	
+	*/
 	FillRand(arr, n);
 	cout << "Исходный массив: \n";
 	Print(arr, n);
 
 	int value;
 	cout << "Введите добавляемое значение: "; cin >> value;
-	
-	arr = push_back(arr, n, value);
+	arr[n] = value;
+	n++;
+
 	Print(arr, n);
 
-	cout << "Введите добавляемое значение: "; cin >> value;
-	Print(arr = push_front(arr, n, value), n);
+
+	// 1) считаем количество четных и нечетных значений в исходном массиве
+	int even_size = 0; //Количество четных значений в массиве
+	int odd_size = 0; //Количество нечетных значений в массиве
+
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] % 2 == 0) even_size++;
+		else odd_size++;
+	}
+
+	cout << "Количество четных элементов: " << even_size << endl;
+	cout << "Количество нечетных элементов: " << odd_size << endl;
+
+	// 2) Выделяем память для четных и нечетных элементов
+	int* even_arr = new int[even_size];
+	int* odd_arr = new int[odd_size];
+
+	// 3) Копируем четные и нечетные элементы в соответствующие массивы
+	for (int i = 0, j = 0, k = 0; i < n; i++)
+	{
+		/*if (arr[i] % 2 == 0)
+			even_arr[j++] = arr[i];
+		else
+			odd_arr[k++] = arr[i];*/
+		(arr[i] % 2 == 0 ? even_arr[j++] : odd_arr[k++]) = arr[i];
+	}
+
+	// 4) Выводим массивы на экран
+	cout << "Массив с четными элементами: \n"; Print(even_arr, even_size);
+	cout << "Массив с нечетными элементами: \n"; Print(odd_arr, odd_size);
+
+	delete[] odd_arr;
+	delete[] even_arr;
+
+	/*
+	После того как дин.массив уже не нужен его нужно удалить - оператор delete
+	Он освобождает память, занимаемую дин.массивом.
+	*/
+#endif EVEN_ODD_DISTRIBUTION
 
 	delete[] arr;
 
@@ -62,42 +100,4 @@ void Print(int arr[], const int n)
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
-}
-
-int* push_back(int arr[], int& n, int value)
-{
-	//1) Создаем буферный массив
-	int* buffer = new int[n + 1];
-	//2) Копируем все элементы из исходного массива в буферный
-	for (int i = 0; i < n; i++)
-	{
-		//Элементы копируются соответственно
-		buffer[i] = arr[i];
-	}
-	//3) Удаляем исходны массив
-	delete[] arr;
-	//4) Подменяем адресисходного массива адресом нового массива
-	arr = buffer;
-	//Только теперь в массив arr можно добавлять значение, поскольку там появилась
-	// ячейка для нового значения
-	//5) Добавляем значение в конец массива
-	arr[n] = value;
-	//6) После того, как в массиве добавился элемент, количество его элементов
-	//увеличивается на 1
-	n++;
-	//			Mission complete!
-	return arr;
-}
-
-int* push_front(int arr[], int& n, int value)
-{
-	int* buffer = new int[n + 1]{};
-	for (int i = 0; i < n; i++)
-		//Элементы копируются со смещением на 1 элемент вправо
-		buffer[i + 1] = arr[i];
-	delete[] arr;
-	arr = buffer;
-	arr[0] = value;
-	n++;
-	return arr;
 }

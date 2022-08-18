@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RepeatTransferParameters", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RepeatDynamicMemory", "RepeatDynamicMemory\RepeatDynamicMemory.vcxproj", "{C8C83DD9-D8F9-4ACA-AA94-065AC19B74C3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EvenOdd", "EvenOdd\EvenOdd.vcxproj", "{3B8E2F34-CF1E-47C9-BB0A-FAAA41F51686}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{C8C83DD9-D8F9-4ACA-AA94-065AC19B74C3}.Release|x64.Build.0 = Release|x64
 		{C8C83DD9-D8F9-4ACA-AA94-065AC19B74C3}.Release|x86.ActiveCfg = Release|Win32
 		{C8C83DD9-D8F9-4ACA-AA94-065AC19B74C3}.Release|x86.Build.0 = Release|Win32
+		{3B8E2F34-CF1E-47C9-BB0A-FAAA41F51686}.Debug|x64.ActiveCfg = Debug|x64
+		{3B8E2F34-CF1E-47C9-BB0A-FAAA41F51686}.Debug|x64.Build.0 = Debug|x64
+		{3B8E2F34-CF1E-47C9-BB0A-FAAA41F51686}.Debug|x86.ActiveCfg = Debug|Win32
+		{3B8E2F34-CF1E-47C9-BB0A-FAAA41F51686}.Debug|x86.Build.0 = Debug|Win32
+		{3B8E2F34-CF1E-47C9-BB0A-FAAA41F51686}.Release|x64.ActiveCfg = Release|x64
+		{3B8E2F34-CF1E-47C9-BB0A-FAAA41F51686}.Release|x64.Build.0 = Release|x64
+		{3B8E2F34-CF1E-47C9-BB0A-FAAA41F51686}.Release|x86.ActiveCfg = Release|Win32
+		{3B8E2F34-CF1E-47C9-BB0A-FAAA41F51686}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
